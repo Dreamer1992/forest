@@ -20,6 +20,10 @@ const paths = {
     styles: {
         src: 'src/styles/**/*.scss',
         dest: 'build/assets/styles/'
+    },
+    images: {
+        src: 'src/images/**/*.*',
+        dest: 'build/assets/images/'
     }
 }
 
@@ -49,6 +53,7 @@ function clean() {
 function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
+    gulp.watch(paths.images.src, images);
 }
 
 // локальный сервер + livereload
@@ -59,12 +64,19 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
+// Перенос картинок
+function images() {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
+exports.images = images;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates),
+    gulp.parallel(styles, templates, images),
     gulp.parallel(watch, server)
 ));

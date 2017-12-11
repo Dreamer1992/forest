@@ -1,8 +1,23 @@
 .menu {
+    color: #fff;
     padding: 0;
     li {
         display: inline-block;
         list-style: none;
-        color: tomato;
+        a {
+            color: tomato;
+            text-decoration: none;
+            &:hover {
+                color: #e2573d;
+            }
+        }
     }
+}
+.bg {
+    background: rgba(0, 0, 0, 0.411);
+    width: 100%;
+}
+body {
+    background-image: url(../images/welcome/welcome-bg.jpg);
+    background-size: cover;
 }
