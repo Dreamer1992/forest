@@ -1,9 +1,27 @@
 extends ../template
 block variables
-    - var title = 'Добро пожаловать'
+	- var title = 'Добро пожаловать'
 
 block content
-    div.bg
-        h3 Ганиев Давлет
-        h4 Личный сайт веб разработчика
-        include ../common/menu.pug
+	section.section.header
+		.header__socials
+			ul.socials
+				each item in ['vk', 'tw', 'in']
+					li.socials__item
+						a(href=`${item}`).socials__link
+		a(href="").hamburger.header__menu
+
+		.header__title
+			.section-title
+				img.section-title__pic
+			.header__user
+				.user
+					.user__pic
+						img.user__pic-img
+					.user__description
+						.user__name Давлет Ганиев
+						.user__data Личный сайт разработчика
+
+		.header__arrow.arrow-down
+
+
