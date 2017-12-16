@@ -20,6 +20,14 @@ const paths = {
     styles: {
         src: 'src/styles/**/*.scss',
         dest: 'build/assets/styles/'
+    },
+    images: {
+        src: 'src/images/**/*.*',
+        dest: 'build/assets/images/'
+    },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/assets/fonts/'
     }
 }
 
@@ -49,6 +57,8 @@ function clean() {
 function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
+    gulp.watch(paths.images.src, images);
+    gulp.watch(paths.fonts.src, fonts);
 }
 
 // локальный сервер + livereload
@@ -59,12 +69,26 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
+// Перенос картинок
+function images() {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest));
+}
+
+// Перенос шрифтов
+function fonts() {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
+exports.images = images;
+exports.fonts = fonts;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates),
+    gulp.parallel(styles, templates, images, fonts),
     gulp.parallel(watch, server)
 ));
