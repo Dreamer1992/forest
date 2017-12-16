@@ -1,6 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
-    margin: 10px;
-    color: #fff;
+    color: #ffffff;
 }
 
-@import 'common/menu';
+@import 'common/index.scss';
+@import 'common/fonts.scss';

@@ -4,24 +4,36 @@ block variables
 
 block content
 	section.section.header
-		.header__socials
-			ul.socials
-				each item in ['vk', 'tw', 'in']
-					li.socials__item
-						a(href=`${item}`).socials__link
-		a(href="").hamburger.header__menu
+		.header__auth
+			a(href="").auth__link Авторизоваться
 
-		.header__title
-			.section-title
-				img.section-title__pic
-			.header__user
-				.user
-					.user__pic
-						img.user__pic-img
-					.user__description
-						.user__name Давлет Ганиев
-						.user__data Личный сайт разработчика
+		.header__user
+			.user
+				.user__pic
+					img.user__pic-img(src="../assets/images/me.jpg")
+				.user__description
+					.user__name Давлет Ганиев
+					.user__data Личный сайт разработчика
+				.user__socials
+					ul.socials
+						li.socials__link
+							a(href="https://vk.com/").socials__link-vk
+								img(src="../assets/images/vk.png")
+						li.socials__link
+							a(href="https://github.com/").socials__link-github
+								img(src="../assets/images/github.png")
+						li.socials__link
+							a(href="https://in.com/").socials__link-in
+								img(src="../assets/images/in.png")
+				.pages
+					ul.pages
+						li.pages__link
+							a(href="/my-works.html").pages__link-wors Мои работы
+						li.pages__link
+							a(href="/about.html").pages__link-about Обо мне
+						li.pages__link
+							a(href="/blog.html").pages__link-blog Блог
 
-		.header__arrow.arrow-down
 
-
+		.header__copyright
+			p.copyright © Давлет Ганиев | 2017

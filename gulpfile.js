@@ -15,7 +15,7 @@ const paths = {
     root: './build',
     templates: {
         pages: 'src/templates/pages/*.pug',
-        src: 'src/template/**/*.pug'
+        src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/styles/**/*.scss',
