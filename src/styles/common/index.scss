@@ -2,6 +2,7 @@
     position: relative;
     background-image: url('/assets/images/welcome/welcome-bg.jpg');
     height: 700px;
+    font-family: 'Roboto-Medium', sans-serif;
 }
 .header__auth {
     display: flex;
@@ -27,45 +28,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    .user {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 380px;
-        background-color: rgba(18,38,32,0.6);
-        margin: auto;
-        border-radius: 0 0 5px 5px;
-        margin-top: -60px;
-    }
-    .user__pic {
-        margin: 35px 0 20px 0;
-    }
-    .user__pic-img {
-        border-radius: 50%;
-        width: 140px;
-        height: 140px;
-        background-color: #e2e2e2;
-    }
-    .user__name {
-        font-size: 28px;
-        text-align: center;
-    }
-    .user__data {
-        font-size: 16px;
-        text-align: center;
-        font-family: 'Roboto-Regular', sans-serif;
-        opacity: .8;
-    }
     .user__socials {
         margin: 30px 0 35px 0;
-    }
-    .socials__link {
-        list-style-type: none;
-        display: inline-block;
-    }
-    .socials__link-github {
-        margin: 0 27px;
     }
     .pages {
         width: 100%;
@@ -99,6 +63,44 @@
     }
 }
 
+.socials__link {
+    list-style-type: none;
+    display: inline-block;
+}
+.socials__link-github {
+    margin: 0 27px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    background-color: rgba(18,38,32,0.6);
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+    margin-top: -60px;
+}
+.user__pic {
+    margin: 35px 0 20px 0;
+}
+.user__pic-img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    background-color: #e2e2e2;
+}
+.user__name {
+    font-size: 28px;
+    text-align: center;
+}
+.user__data {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto-Regular', sans-serif;
+    opacity: .8;
+}
 
 .header__copyright {
     position: absolute;
