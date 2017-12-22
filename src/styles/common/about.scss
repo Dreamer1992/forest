@@ -98,6 +98,15 @@
             color: #566358;
             margin: 25px 0;
         }
+        .sector {
+            opacity: 0;
+            stroke-dasharray: 282;
+            stroke-dashoffset: 14;
+            transition: all 1s;
+        }
+        .sector:hover {
+            opacity: 1;
+        }
     }
 }
 

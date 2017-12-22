@@ -21,6 +21,14 @@ block content
 
                 a(href="").hamburger.hero__menu
                     img(src="../assets/images/icons/hamburger.png")
+                //- svg(version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                //-     width="40px" height="35px" viewBox="0 0 40 35" enable-background="new 0 0 40 35" xml:space="preserve")
+                //-     path(fill="#FFFFFF" d="M40,2.5C40,3.881,38.881,5,37.5,5h-35C1.119,5,0,3.881,0,2.5l0,0C0,1.119,1.119,0,2.5,0h35
+                //-         C38.881,0,40,1.119,40,2.5L40,2.5z")
+                //-     path(fill="#FFFFFF" d="M40,17.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,20,0,18.881,0,17.5l0,0C0,16.119,1.119,15,2.5,15h35
+                //-         C38.881,15,40,16.119,40,17.5L40,17.5z")
+                //-     path(fill="#FFFFFF" d="M40,32.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,35,0,33.881,0,32.5l0,0C0,31.119,1.119,30,2.5,30h35
+                //-         C38.881,30,40,31.119,40,32.5L40,32.5z")
             .hero__user
                 .user
                     .user__pic
@@ -63,11 +71,22 @@ block content
                             li.skills-list__item
                                 .skills-row
                                     .skills-row__title #{item}
-                                    ul.skills-row__list
-                                        li.skills-row__item
-                                            .skill
-                                                svg.skill__circle
-                                                    .skill__title
+                                        ul.skills-row__list
+                                            each one in ['HTML5', 'CSS3', 'JavaScript&jQuery']
+                                                li.skills-row__item
+                                                    .skill
+                                                        .skill__title #{one}
+                                                        svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
+                                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
+                                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+
+                    //- ul.skills-list
+                    //-     li.skills-list__item
+                    //-         .skills-row
+                    //-             .skills-row__title
+                    //-             ul.skills-row
+                    //-             .skill-row__item
+                    //-                 .skill
 
         section.section.section__map
             .google-map
