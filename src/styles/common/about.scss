@@ -30,12 +30,12 @@
     display: flex;
     justify-content: space-between;
     .about__left {
+        flex-basis: 50%;
         background-color: #efeee9;
         .block-title {
             font-family: 'Sansus-Webissimo-Regular', sans-serif;
             font-size: 63px;
             text-transform: uppercase;
-            // border-bottom: 3px solid #373e42;
             text-align: center; 
         }
         .hr {
@@ -74,13 +74,13 @@
                 color: #566358;
                 margin: 25px 0;
             }
-
-
         }
-    }
+
+    }   //-.about__left
 
     .about__right {
         background-color: #eeebdf;
+        flex-basis: 50%;
         .block-subtitle {
             font-size: 36px;
             color: #566358;
@@ -96,7 +96,35 @@
         .text-block {
             font-size: 16px;
             color: #566358;
-            margin: 25px 0;
+            padding: 25px 40px;
+        }
+        .skills_card {
+            padding: 20px 40px;
+            .skills-title {
+                font-size: 28px;
+                font-family: 'Roboto', sans-serif;
+                color: #566358;
+                padding: 20px 0;
+            }
+            .skills-list {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+            .skills-list__item {
+                list-style-type: none;
+                position: relative;
+                margin-right: 35px;
+                .skill-title {
+                    position: absolute;
+                    z-index: 10;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 13px;
+                    color: #4e8839;
+                    text-align: center;
+                }
+            }
         }
         .sector {
             opacity: 0;
@@ -107,8 +135,8 @@
         .sector:hover {
             opacity: 1;
         }
-    }
-}
+    }   //-.about__right
+}   //-.about
 
 .section__map {
     position: relative;
@@ -189,7 +217,6 @@
 }
 .footer__bottom {
     .copyright {
-        opacity: .5;
         background-color: rgba(108, 156, 90, .85);
         text-align: center;
         color: #ffffff;

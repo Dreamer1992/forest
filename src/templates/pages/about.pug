@@ -11,24 +11,16 @@ block content
                 ul.socials.hero__socials
                     li.socials__link
                         a(href="https://vk.com/").socials__link-vk
-                            img(src="../assets/images/icons/vk.png")
+                            include ../../images/icons/vk.svg
                     li.socials__link
                         a(href="https://github.com/").socials__link-github
-                            img(src="../assets/images/icons/github.png")
+                            include ../../images/icons/github.svg
                     li.socials__link
                         a(href="https://in.com/").socials__link-in
-                            img(src="../assets/images/icons/in.png")
+                            include ../../images/icons/in.svg
 
                 a(href="").hamburger.hero__menu
-                    img(src="../assets/images/icons/hamburger.png")
-                //- svg(version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                //-     width="40px" height="35px" viewBox="0 0 40 35" enable-background="new 0 0 40 35" xml:space="preserve")
-                //-     path(fill="#FFFFFF" d="M40,2.5C40,3.881,38.881,5,37.5,5h-35C1.119,5,0,3.881,0,2.5l0,0C0,1.119,1.119,0,2.5,0h35
-                //-         C38.881,0,40,1.119,40,2.5L40,2.5z")
-                //-     path(fill="#FFFFFF" d="M40,17.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,20,0,18.881,0,17.5l0,0C0,16.119,1.119,15,2.5,15h35
-                //-         C38.881,15,40,16.119,40,17.5L40,17.5z")
-                //-     path(fill="#FFFFFF" d="M40,32.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,35,0,33.881,0,32.5l0,0C0,31.119,1.119,30,2.5,30h35
-                //-         C38.881,30,40,31.119,40,32.5L40,32.5z")
+                    include ../../images/icons/hamburger.svg
             .hero__user
                 .user
                     .user__pic
@@ -39,12 +31,13 @@ block content
 
             .hero__arrow.arrow-down
                 a(href="#")
-                    img(src="../assets/images/icons/arrow-down.png")
+                    include ../../images/icons/arrow_down.svg
 
         section.section.about
             .about__left
-                //- .about__triangle.about__triangle_left
-                //-     svg.triangle.triangle_fill_white
+                .about__triangle.about__triangle_left
+                    //- include ../../images/icons/about_bg_left.svg
+                    //- svg.triangle.triangle_fill_white
                 .about__left-title
                     .block-title Обо мне
                     hr.hr
@@ -64,29 +57,50 @@ block content
                 //-     svg.triangle.triangle_fill_beige
                 .about__right-title.block-subtitle Чем я могу быть </br> вам полезен
                 hr.hr__about-right-subtitle
-                .about__right-desc.text-block
-                    p Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                    ul.skills-list
-                        each item in ['Frontend', 'Backend', 'Workflow']
-                            li.skills-list__item
-                                .skills-row
-                                    .skills-row__title #{item}
-                                        ul.skills-row__list
-                                            each one in ['HTML5', 'CSS3', 'JavaScript&jQuery']
-                                                li.skills-row__item
-                                                    .skill
-                                                        .skill__title #{one}
-                                                        svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
-                                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
-                                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+                .about__right-desc
+                    p.text-block Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    -
+                        var skills_list = [
+                            {
+                                title: "Frontend",
+                                skills: ['HTML5', 'CSS3', 'JavaScript & jQuery']
+                            },
+                            {
+                                title: "Backend",
+                                skills: ["PHP", "mySQl", "Node.js & npm", "Mongo.db"]
+                            },
+                            {
+                                title: "Workflow",
+                                skills: ["Git", "Gulp", "Bower"]
+                            }
+                        ];
+                    mixin skills_card(arg)
+                        .skills_card
+                            .skills_title
+                                h2.skills-title= arg.title
+                            .skills_row
+                                ul.skills-list
+                                    each skill in arg.skills
+                                        li.skills-list__item
+                                            svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
+                                                circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
+                                                circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+                                            span.skill-title= skill
+                    
+                    for cout in skills_list
+                        +skills_card(cout)
 
-                    //- ul.skills-list
-                    //-     li.skills-list__item
-                    //-         .skills-row
-                    //-             .skills-row__title
-                    //-             ul.skills-row
-                    //-             .skill-row__item
-                    //-                 .skill
+                        //- ul.skills-list
+                        //-     li.skills-list__item
+                        //-         .skills-row
+                        //-             .skills-row__title #{item}
+
+                                    //- ul.skills-row__list
+                                    //-     each item in ['HTML5', 'CSS3', 'JavaScript&jQuery']
+                                    //-         li.skills-row__item
+                                    //-             .skill
+                                    //-                 .skill__title #{item}
+                                                        
 
         section.section.section__map
             .google-map
@@ -98,19 +112,19 @@ block content
                     ul.contacts__list
                         li.contacts__item.contacts-row
                             .contacts-row__icon
-                                img(src="/assets/images/icons/skype.png")
+                                include ../../images/icons/skype.svg
                             .contacts-row__title skype_ganiev
                         li.contacts__item.contacts-row
                             .contacts-row__icon
-                                img(src="/assets/images/icons/mail.png")
+                                include ../../images/icons/envelope.svg
                             .contacts-row__title Ganiev.Davlet@gmail.com
                         li.contacts__item.contacts-row
                             .contacts-row__icon
-                                img(src="/assets/images/icons/phone.png")
+                                include ../../images/icons/phone.svg
                             .contacts-row__title +7 931 368 47 50
                         li.contacts__item.contacts-row
                             .contacts-row__icon
-                                img(src="/assets/images/icons/map.png")
+                                include ../../images/icons/map_marker.svg
                             .contacts-row__title Санкт-Петербург, ул. Софьи Ковалевской
 
         footer.footer
@@ -141,13 +155,13 @@ block content
                             ul.socials.hero__socials
                                 li.socials__link
                                     a(href="https://vk.com/").socials__link-vk
-                                        img(src="../assets/images/icons/vk.png")
+                                        include ../../images/icons/vk.svg
                                 li.socials__link
                                     a(href="https://github.com/").socials__link-github
-                                        img(src="../assets/images/icons/github.png")
+                                        include ../../images/icons/github.svg
                                 li.socials__link
                                     a(href="https://in.com/").socials__link-in
-                                        img(src="../assets/images/icons/in.png")
+                                        include ../../images/icons/in.svg
             .footer__row
                 .footer__col
                     .footer__text.blockquote
