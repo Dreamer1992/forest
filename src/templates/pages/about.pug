@@ -7,7 +7,7 @@ block content
     section.section.hero
 
         .hero__title
-            .hero__title__top-line
+            .hero__top-line
                 ul.socials.hero__socials
                     li.socials__link
                         a(href="https://vk.com/").socials__link-vk
@@ -32,12 +32,13 @@ block content
             .hero__arrow.arrow-down
                 a(href="#")
                     include ../../images/icons/arrow_down.svg
+        .multi__triangles
+            svg(xmlns="http://www.w3.org/200/svg" viewBox="0 0 1000 85" preserveAspectRatio="none" class="triangle")
+                polygon(class="triangle__left" points="0,0 0,86 500.8,86 500.8,84")
+                polygon(class="triangle__right" points="1000,0 1000,85 500,86 500,84")
 
         section.section.about
             .about__left
-                .about__triangle.about__triangle_left
-                    //- include ../../images/icons/about_bg_left.svg
-                    //- svg.triangle.triangle_fill_white
                 .about__left-title
                     .block-title Обо мне
                     hr.hr
@@ -53,8 +54,6 @@ block content
                             br
                             P Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. 
             .about__right
-                //- .about__triangle.about__triangle_right
-                //-     svg.triangle.triangle_fill_beige
                 .about__right-title.block-subtitle Чем я могу быть </br> вам полезен
                 hr.hr__about-right-subtitle
                 .about__right-desc
@@ -155,5 +154,6 @@ block content
                     .footer__text.blockquote
                         blockquote.quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
                         p.quote__name - Martin Golding
-        .footer__bottom
-            p.copyright © Давлет Ганиев | 2017
+        .footer__copyright
+            .copyright
+                p.copyright__text © Давлет Ганиев | 2017

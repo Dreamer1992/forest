@@ -4,4 +4,80 @@ block variables
     - var title = 'Мои работы'
 
 block content
-    h1 Мои работы
+    header.header__works
+        .hero__title
+            .hero__title__top-line
+                ul.socials.hero__socials
+                    li.socials__link
+                        a(href="https://vk.com/").socials__link-vk
+                            include ../../images/icons/vk.svg
+                    li.socials__link
+                        a(href="https://github.com/").socials__link-github
+                            include ../../images/icons/github.svg
+                    li.socials__link
+                        a(href="https://in.com/").socials__link-in
+                            include ../../images/icons/in.svg
+
+                a(href="").hamburger.hero__menu
+                    include ../../images/icons/hamburger.svg
+            .hero__user
+                .user
+                    .user__pic
+                        img.user__pic-img(src="../assets/images/me.jpg")
+                    .user__info
+                        .user__name Давлет Ганиев
+                        .user__data Личный сайт разработчика
+
+            .hero__arrow.arrow-down
+                a(href="#")
+                    include ../../images/icons/arrow_down.svg
+        .multi__triangles
+            svg(xmlns="http://www.w3.org/200/svg" viewBox="0 0 1000 85" preserveAspectRatio="none" class="triangle")
+                polygon(class="triangle__left" points="0,0 0,86 500.8,86 500.8,84")
+                polygon(class="triangle__right" points="1000,0 1000,85 500,86 500,84")
+    
+    section.section__works
+        .works__title
+            h2.works__title-h2 Мои работы
+        .portfolio__left-col
+        .portfolio__right-col
+    
+    section.bg__what-say
+        .what-say
+            .what-say__title
+                h2.works__title-h2 Что обо мне </br> говорят
+            .blockquote
+                .blockquote__row
+                    .quote__one
+                        .avatar
+                            img.quote__image(src="../assets/images/kovalchuk.jpg", alt="")
+                        .quote
+                            p.quote__text Этот парень проходил веб-разработке не где-то, а в LoftSchool!
+                            p.author Ковальчук Дмитрий
+                            p.who_is - Основатель LoftSchool
+                    .quote__two
+                        .avatar
+                            img.quote__image(src="../assets/images/sabancev.jpg", alt="")
+                        .quote
+                            p.quote__text Этот код выдержит любые испытания. Только пожалуй, не загружается сайт на слишком старых браузерах.
+                            p.author Сабанцев Владимир
+                            p.who_is - преподаватель
+
+            .what-say__form
+                .form-wrap
+                    .form-wrap__title
+                        h2.form-title Связаться со мной
+                    .field-name
+                        input(type="text" id="name" class="name" placeholder="Имя")
+                    .field-email
+                        input(type="text" id="email" class="email" placeholder="Email")
+                    .field-textarea
+                        textarea.form-textarea(row="10" col="5" placeholder="Ваше сообщение")
+                    .buttons
+                        input.submit__btn(type="submit" value="Отправить")
+                        input.reset__btn(type="reset" value="Очистить")
+        .footer
+
+        .footer__my-works
+            .copyright
+                p.copyright__text © Давлет Ганиев | 2017
