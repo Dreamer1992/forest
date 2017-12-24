@@ -58,7 +58,7 @@ block content
                 .about__right-title.block-subtitle Чем я могу быть </br> вам полезен
                 hr.hr__about-right-subtitle
                 .about__right-desc
-                    p.text-block Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p.text-block Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     -
                         var skills_list = [
                             {
@@ -88,19 +88,7 @@ block content
                                             span.skill-title= skill
                     
                     for cout in skills_list
-                        +skills_card(cout)
-
-                        //- ul.skills-list
-                        //-     li.skills-list__item
-                        //-         .skills-row
-                        //-             .skills-row__title #{item}
-
-                                    //- ul.skills-row__list
-                                    //-     each item in ['HTML5', 'CSS3', 'JavaScript&jQuery']
-                                    //-         li.skills-row__item
-                                    //-             .skill
-                                    //-                 .skill__title #{item}
-                                                        
+                        +skills_card(cout)                                                        
 
         section.section.section__map
             .google-map
