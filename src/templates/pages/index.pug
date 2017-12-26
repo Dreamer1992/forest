@@ -1,9 +1,39 @@
 extends ../template
 block variables
-    - var title = 'Добро пожаловать'
+	- var title = 'Добро пожаловать'
 
 block content
-    div.bg
-        h3 Ганиев Давлет
-        h4 Личный сайт веб разработчика
-        include ../common/menu.pug
+	section.section.header
+		.header__auth
+			a(href="").auth__link Авторизоваться
+
+		.header__user
+			.user
+				.user__pic
+					img.user__pic-img(src="../assets/images/me.jpg")
+				.user__description
+					.user__name Давлет Ганиев
+					.user__data Личный сайт веб разработчика
+				.user__socials
+					ul.socials
+						li.socials__link
+							a(href="https://vk.com/").socials__link-vk
+								include ../../images/icons/vk.svg
+						li.socials__link
+							a(href="https://github.com/").socials__link-github
+								include ../../images/icons/github.svg
+						li.socials__link
+							a(href="https://in.com/").socials__link-in
+								include ../../images/icons/in.svg
+				.pages
+					ul.pages
+						li.pages__link
+							a(href="/my-works.html").pages__link-wors Мои работы
+						li.pages__link
+							a(href="/about.html").pages__link-about Обо мне
+						li.pages__link
+							a(href="/blog.html").pages__link-blog Блог
+
+
+		.copyright
+			p.copyright__text © Давлет Ганиев | 2017

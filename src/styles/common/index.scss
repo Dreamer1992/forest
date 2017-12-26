@@ -1,0 +1,115 @@
+.header {
+    position: relative;
+    background-image: url('/assets/images/welcome/welcome-bg.jpg');
+    height: 700px;
+    font-family: 'Roboto-Medium', sans-serif;
+}
+.header__auth {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.auth__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #fff;
+    padding: 12px 27px;
+    border-radius: 40px;
+    margin: 20px 20px 0 0;
+    &:hover {
+        background-color: #4e8839;
+    }
+}
+
+.header__user {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    .user__socials {
+        margin: 30px 0 35px 0;
+    }
+    .pages {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pages__link {
+        list-style-type: none;
+        background-color: #6c9c5a;
+        text-align: center;
+        flex-grow: 1;
+        padding: 12px 10px 15px 10px;
+        border-right: 2px solid rgba(#dee3e7, .5);
+    }
+    .pages__link:hover {
+        background-color: #4e8839;
+        cursor: pointer;
+    }
+    .pages__link:last-child {
+        border-right: none;
+        border-radius: 0 0 5px 0;
+    }
+    .pages__link:first-child {
+        border-radius: 0 0 0 5px;
+    }
+    .pages__link a{
+        font-size: 16px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+
+.socials__link {
+    list-style-type: none;
+    display: inline-block;
+}
+.socials__link-github {
+    margin: 0 27px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    background-color: rgba(18,38,32,0.6);
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+    margin-top: -60px;
+}
+.user__pic {
+    margin: 35px 0 20px 0;
+}
+.user__pic-img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    background-color: #e2e2e2;
+}
+.user__name {
+    font-size: 28px;
+    text-align: center;
+}
+.user__data {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto-Regular', sans-serif;
+    opacity: .8;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    .copyright__text {
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Roboto-Regular', sans-serif;
+        text-align: center;
+    }
+}
