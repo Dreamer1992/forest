@@ -38,21 +38,21 @@ block content
     
     section.section__works
         .works__title
-            h2.works__title-h2 Мои работы
+            h2.works__title-h2.underline Мои работы
         .portfolio__left-col
         .portfolio__right-col
     
     section.bg__what-say
         .what-say
             .what-say__title
-                h2.works__title-h2 Что обо мне </br> говорят
+                h2.works__title-h2.underline Что обо мне </br> говорят
             .blockquote
                 .blockquote__row
                     .quote__one
                         .avatar
                             img.quote__image(src="../assets/images/kovalchuk.jpg", alt="")
                         .quote
-                            p.quote__text Этот парень проходил веб-разработке не где-то, а в LoftSchool!
+                            p.quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
                             p.author Ковальчук Дмитрий
                             p.who_is - Основатель LoftSchool
                     .quote__two
@@ -66,17 +66,54 @@ block content
             .what-say__form
                 .form-wrap
                     .form-wrap__title
-                        h2.form-title Связаться со мной
+                        h2.form-title.underline Связаться со мной
                     .field-name
                         input(type="text" id="name" class="name" placeholder="Имя")
                     .field-email
                         input(type="text" id="email" class="email" placeholder="Email")
                     .field-textarea
-                        textarea.form-textarea(row="10" col="5" placeholder="Ваше сообщение")
+                        textarea.form-textarea(rows="5" placeholder="Ваше сообщение")
                     .buttons
                         input.submit__btn(type="submit" value="Отправить")
                         input.reset__btn(type="reset" value="Очистить")
-        .footer
+        footer.footer
+            .footer__row
+                .footer__col
+                    .footer__text
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+            .footer__row
+                .footer__col
+                    .footer__menu
+                        nav.menu
+                            ul.menu__list
+                                li.menu__item
+                                    a(href="/my-works.html").menu__link Мои работы
+                                li.menu__item
+                                    a(href="/about.html").menu__link Обо мне
+                                li.menu__item
+                                    a(href="/blog.html").menu__link Блог
+                                li.menu__item
+                                    a(href="/index.html").menu__link Авторизация
+                .footer__col
+                    .footer__socials
+                        ul.socials.socials_rounded
+                            ul.socials.hero__socials
+                                li.socials__link
+                                    a(href="https://vk.com/").socials__link-vk
+                                        include ../../images/icons/vk.svg
+                                li.socials__link
+                                    a(href="https://github.com/").socials__link-github
+                                        include ../../images/icons/github.svg
+                                li.socials__link
+                                    a(href="https://in.com/").socials__link-in
+                                        include ../../images/icons/in.svg
+            .footer__row
+                .footer__col
+                    .footer__text.blockquote
+                        blockquote.quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+                        p.quote__name - Martin Golding
+
+
 
         .footer__my-works
             .copyright

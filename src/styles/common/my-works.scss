@@ -37,7 +37,11 @@
         }
     }
 }
-
+.bg__what-say {
+    background-image: url('../images/bg__what-say.png');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
 .blockquote__row {
     display: flex;
     flex-flow: row nowrap;
@@ -56,7 +60,8 @@
         color: #5d5a55;
         text-align: left;
         .quote__text {
-            text-align-last: left;
+            text-align: left;
+            padding-bottom: 20px;
         }
         .author,
         .who_is {
@@ -79,8 +84,11 @@
 .what-say__form {
     display: flex;
     justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
     .form-wrap {
         background-color: rgba(218, 219, 214, .6);
+        border-radius: 5px;
         justify-content: center;
         flex-flow: column nowrap;
         width: 380px;
@@ -91,11 +99,25 @@
             width: 80%;
             margin: 0 auto;
         }
+        .name, .email,
+        .form-textarea {
+            font-family: 'Roboto-Regular', sans-serif;
+            font-size: 16px;
+            color: #5d5a55;
+            padding: 13px 20px;
+            border-radius: 10px;
+            border: none;
+        }
+        .field-name, .field-email,
+        .field-textarea {
+            margin-bottom: 20px;
+        }
         .form-wrap__title {
             text-align: center;
             color: #566358;
-            font-size: 35px;
+            font-size: 18px;
             text-transform: uppercase;
+            padding: 30px 0;
         }
         .buttons {
             display: flex;
@@ -103,10 +125,34 @@
             justify-content: center;
             .submit__btn,
             .reset__btn {
+                &:hover {
+                    background: #4e8839;
+                    cursor: pointer;
+                }
                 width: 50%;
                 color: #fff;
-                padding: 15px 10px;
+                padding: 13px 10px;
+                background: #6c9c5a;
+                border: none;
+            }
+            .submit__btn {
+                border-right: 2px solid rgba(222, 227, 231, .5);
+                border-radius: 0 0 0 5px;
+            }
+            .reset__btn {
+                border-radius: 0 0 5px 0;
             }
         }
     }
+}
+.underline::after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 10%;
+    background: #566358;
+    margin-top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
