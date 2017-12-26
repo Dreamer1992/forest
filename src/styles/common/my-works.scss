@@ -1,0 +1,112 @@
+// .portfolio__left-col,
+// .portfolio__right-col {
+    //     background-color: #ebefe2;
+    // }
+.portfolio__right-col {
+    background-color: #e1e4d7;
+    height: 100vh;
+}
+.works__title {
+    background-color: #f8f9f5;
+}
+.works__title-h2 {
+    font-family: 'Sansus-Webissimo-Regular', sans-serif;
+    font-size: 63px;
+    color: #373e42;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 70px 0;
+}
+.hero__title__top-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.header__works .multi__triangles .triangle__left,
+.header__works .multi__triangles .triangle__right {
+    fill: #f8f9f5;
+}
+
+.footer__my-works {
+    .copyright {
+        position: relative;
+        background-color: rgba(108, 156, 90, .85);
+        bottom: 0px;
+        .copyright__text {
+            padding: 10px 0 15px 0;
+        }
+    }
+}
+
+.blockquote__row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    .quote__one,
+    .quote__two {
+        flex: 0 0 35%;
+        .avatar,
+        .quote {
+            width: 80%;
+            text-align: center;
+        }
+    }
+    .quote {
+        font-family: 'Roboto-Italic', sans-serif;
+        color: #5d5a55;
+        text-align: left;
+        .quote__text {
+            text-align-last: left;
+        }
+        .author,
+        .who_is {
+            text-align: right;
+            padding: 3px 30px;
+        }
+        
+    }
+    .quote__image {
+        border-radius: 50%;
+        width: 20%;
+    }
+    .quote .author {
+        font-size: 16px;
+        color: #4e8839;
+        font-family: 'Roboto-Bold', sans-serif;
+    }
+
+}
+.what-say__form {
+    display: flex;
+    justify-content: center;
+    .form-wrap {
+        background-color: rgba(218, 219, 214, .6);
+        justify-content: center;
+        flex-flow: column nowrap;
+        width: 380px;
+        .form-wrap__title,
+        .name, .email,
+        .form-textarea {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .form-wrap__title {
+            text-align: center;
+            color: #566358;
+            font-size: 35px;
+            text-transform: uppercase;
+        }
+        .buttons {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            .submit__btn,
+            .reset__btn {
+                width: 50%;
+                color: #fff;
+                padding: 15px 10px;
+            }
+        }
+    }
+}
