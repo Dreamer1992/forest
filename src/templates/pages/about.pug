@@ -4,150 +4,84 @@ block variables
     - var title = 'Обо мне'
 
 block content
-    section.section.hero
+    include ../common/header-inc
+    include ../common/triangle-inc
 
-        .hero__title
-            .hero__top-line
-                ul.socials.hero__socials
-                    li.socials__link
-                        a(href="https://vk.com/").socials__link-vk
-                            include ../../images/icons/vk.svg
-                    li.socials__link
-                        a(href="https://github.com/").socials__link-github
-                            include ../../images/icons/github.svg
-                    li.socials__link
-                        a(href="https://in.com/").socials__link-in
-                            include ../../images/icons/in.svg
+    section.section.about
+        .about__left
+            .about__left-title
+                .block-title.underline Обо мне
+            .about__left-content
+                .user-description
+                    .user-description__image
+                        img.user-description__avatar(src="../assets/images/who.jpg")
+                    .user-description__title
+                        .block-subtitle.underline Кто я
+                    .user-description__text.text-block
+                        p Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        br
+                        P Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. 
+        .about__right
+            .about__right-title
+                .block-subtitle.underline Чем я могу быть </br> вам полезен
+            .about__right-desc
+                p.text-block Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                -
+                    var skills_list = [
+                        {
+                            title: "Frontend",
+                            skills: ['HTML5', 'CSS3', 'JavaScript & jQuery']
+                        },
+                        {
+                            title: "Backend",
+                            skills: ["PHP", "mySQl", "Node.js & npm", "Mongo.db"]
+                        },
+                        {
+                            title: "Workflow",
+                            skills: ["Git", "Gulp", "Bower"]
+                        }
+                    ];
+                mixin skills_card(arg)
+                    .skills_card
+                        .skills_title
+                            h2.skills-title= arg.title
+                        .skills_row
+                            ul.skills-list
+                                each skill in arg.skills
+                                    li.skills-list__item
+                                        svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
+                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
+                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+                                        span.skill-title= skill
+                
+                for cout in skills_list
+                    +skills_card(cout)                                                        
 
-                a(href="").hamburger.hero__menu
-                    include ../../images/icons/hamburger.svg
-            .hero__user
-                .user
-                    .user__pic
-                        img.user__pic-img(src="../assets/images/me.jpg")
-                    .user__info
-                        .user__name Давлет Ганиев
-                        .user__data Личный сайт разработчика
+    section.section.section__map
+        .google-map
+        .map__data
+            .contacts
+                .contacts__title
+                    .block-subtitle.underline Контакты
+                ul.contacts__list
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/skype.svg
+                        .contacts-row__title skype_ganiev
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/envelope.svg
+                        .contacts-row__title Ganiev.Davlet@gmail.com
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/phone.svg
+                        .contacts-row__title +7 931 368 47 50
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/map_marker.svg
+                        .contacts-row__title Санкт-Петербург, ул. Софьи Ковалевской
 
-            .hero__arrow.arrow-down
-                a(href="#")
-                    include ../../images/icons/arrow_down.svg
-        .multi__triangles
-            svg(xmlns="http://www.w3.org/200/svg" viewBox="0 0 1000 85" preserveAspectRatio="none" class="triangle")
-                polygon(class="triangle__left" points="0,0 0,86 500.8,86 500.8,84")
-                polygon(class="triangle__right" points="1000,0 1000,85 500,86 500,84")
-
-        section.section.about
-            .about__left
-                .about__left-title
-                    .block-title.underline Обо мне
-                .about__left-content
-                    .user-description
-                        .user-description__image
-                            img.user-description__avatar(src="../assets/images/who.jpg")
-                        .user-description__title
-                            .block-subtitle.underline Кто я
-                        .user-description__text.text-block
-                            p Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                            br
-                            P Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. 
-            .about__right
-                .about__right-title
-                    .block-subtitle.underline Чем я могу быть </br> вам полезен
-                //- hr.hr__about-right-subtitle
-                .about__right-desc
-                    p.text-block Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    -
-                        var skills_list = [
-                            {
-                                title: "Frontend",
-                                skills: ['HTML5', 'CSS3', 'JavaScript & jQuery']
-                            },
-                            {
-                                title: "Backend",
-                                skills: ["PHP", "mySQl", "Node.js & npm", "Mongo.db"]
-                            },
-                            {
-                                title: "Workflow",
-                                skills: ["Git", "Gulp", "Bower"]
-                            }
-                        ];
-                    mixin skills_card(arg)
-                        .skills_card
-                            .skills_title
-                                h2.skills-title= arg.title
-                            .skills_row
-                                ul.skills-list
-                                    each skill in arg.skills
-                                        li.skills-list__item
-                                            svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
-                                                circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
-                                                circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
-                                            span.skill-title= skill
-                    
-                    for cout in skills_list
-                        +skills_card(cout)                                                        
-
-        section.section.section__map
-            .google-map
-            .map__data
-                .contacts
-                    .contacts__title
-                        .block-subtitle.underline Контакты
-                    ul.contacts__list
-                        li.contacts__item.contacts-row
-                            .contacts-row__icon
-                                include ../../images/icons/skype.svg
-                            .contacts-row__title skype_ganiev
-                        li.contacts__item.contacts-row
-                            .contacts-row__icon
-                                include ../../images/icons/envelope.svg
-                            .contacts-row__title Ganiev.Davlet@gmail.com
-                        li.contacts__item.contacts-row
-                            .contacts-row__icon
-                                include ../../images/icons/phone.svg
-                            .contacts-row__title +7 931 368 47 50
-                        li.contacts__item.contacts-row
-                            .contacts-row__icon
-                                include ../../images/icons/map_marker.svg
-                            .contacts-row__title Санкт-Петербург, ул. Софьи Ковалевской
-
-        footer.footer
-            .footer__row
-                .footer__col
-                    .footer__text
-                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-            .footer__row
-                .footer__col
-                    .footer__menu
-                        nav.menu
-                            ul.menu__list
-                                li.menu__item
-                                    a(href="/my-works.html").menu__link Мои работы
-                                li.menu__item
-                                    a(href="/about.html").menu__link Обо мне
-                                li.menu__item
-                                    a(href="/blog.html").menu__link Блог
-                                li.menu__item
-                                    a(href="/index.html").menu__link Авторизация
-                .footer__col
-                    .footer__socials
-                        ul.socials.socials_rounded
-                            ul.socials.hero__socials
-                                li.socials__link
-                                    a(href="https://vk.com/").socials__link-vk
-                                        include ../../images/icons/vk.svg
-                                li.socials__link
-                                    a(href="https://github.com/").socials__link-github
-                                        include ../../images/icons/github.svg
-                                li.socials__link
-                                    a(href="https://in.com/").socials__link-in
-                                        include ../../images/icons/in.svg
-            .footer__row
-                .footer__col
-                    .footer__text.blockquote
-                        blockquote.quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
-                        p.quote__name - Martin Golding
-        .footer__copyright
-            .copyright
-                p.copyright__text © Давлет Ганиев | 2017
+    include ../common/footer-inc
+    .footer__copyright
+        .copyright
+            p.copyright__text © Давлет Ганиев | 2017

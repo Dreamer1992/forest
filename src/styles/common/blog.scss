@@ -1,0 +1,31 @@
+.blog-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/welcome/welcome-bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    .header-user {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        .blog {
+            position: relative;
+            font-family: 'Sansus-Webissimo-Regular', 'sans-serif';
+            color: #ffffff;
+            font-size: 3.9375em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .underline::after {
+            width: 40%;
+            background: #fff;
+        }
+        .article {
+            color: #ffffff;
+            font-size: 1em;
+            font-family: 'Roboto-Regular', 'sans-serif';
+        }
+    }
+}

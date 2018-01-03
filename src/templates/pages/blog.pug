@@ -4,14 +4,18 @@ block variables
     - var title = 'Блог'
 
 block content
-    h1 Блог
-    ul
-        li
-            h2 Заголовок статьи
-            p Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.
-        li
-            h2 Еще статья
-            p Далеко-далеко за словесными горами, в стране гласных и согласных живут.
-        li
-            h2 Последняя статья
-            p Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные.
+    section.blog-header
+        .blog__user
+            .header-user
+                .user__pic
+                    img.user__pic-img(src="../assets/images/me.jpg")
+                .user__info
+                    .blog.underline Блог
+                    .article Статьи, которые я написал
+    section.triangle-blog
+        include ../common/triangle-inc
+
+    include ../common/footer-inc
+    .footer__copyright
+        .copyright
+            p.copyright__text © Давлет Ганиев | 2017
