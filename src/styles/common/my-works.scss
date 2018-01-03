@@ -11,7 +11,7 @@
 }
 .works__title-h2 {
     font-family: 'Sansus-Webissimo-Regular', sans-serif;
-    font-size: 63px;
+    font-size: 3.9375em;
     color: #373e42;
     text-transform: uppercase;
     text-align: center;
@@ -41,6 +41,7 @@
     background-image: url('../images/bg__what-say.png');
     background-position: 50% 100%;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .blockquote__row {
     display: flex;
@@ -58,7 +59,7 @@
     .quote {
         font-family: 'Roboto-Italic', sans-serif;
         color: #5d5a55;
-        text-align: left;
+        font-size: 1em;
         .quote__text {
             text-align: left;
             padding-bottom: 20px;
@@ -75,7 +76,6 @@
         width: 20%;
     }
     .quote .author {
-        font-size: 16px;
         color: #4e8839;
         font-family: 'Roboto-Bold', sans-serif;
     }
@@ -125,15 +125,17 @@
             justify-content: center;
             .submit__btn,
             .reset__btn {
-                &:hover {
-                    background: #4e8839;
-                    cursor: pointer;
-                }
                 width: 50%;
                 color: #fff;
                 padding: 13px 10px;
                 background: #6c9c5a;
                 border: none;
+                font-size: 1em;
+                font-family: 'Roboto-Medium', 'sans-serif';
+                &:hover {
+                    background: #4e8839;
+                    cursor: pointer;
+                }
             }
             .submit__btn {
                 border-right: 2px solid rgba(222, 227, 231, .5);
