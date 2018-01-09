@@ -1,0 +1,46 @@
+.bg-auth {
+    display: flex;
+    position: relative;
+    background-image: url(../images/welcome/welcome-bg.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 30%;
+    height: auto;
+    background-color: rgba(18, 38, 32, .6);
+    color: #ffffff;
+    .auth__title {
+        font-family: 'Sansus-Webissimo-Regular', 'sans-serif';
+        font-size: 2.1875em;
+        text-transform: uppercase;
+        margin: 40px 0;
+        .underline::after {
+            background: #fff;
+        }
+    }
+    .auth__field {
+        width: 90%;
+        margin: 10px 0;
+        .login,
+        .password {
+            background-repeat: no-repeat;
+            background-position: 15px;
+            padding: 15px 10px 15px 50px;
+            width: 100%;
+            border: none;
+            border-radius: 40px;
+        }
+        .login {
+            background-image: url('../images/icons/login.png');
+            
+        }
+        .password {
+            background-image: url('../images/icons/password.png');
+        }
+    }
+}
