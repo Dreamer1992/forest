@@ -13,21 +13,23 @@ block content
                 input(type="password" id="password" class="password" placeholder="Пароль")
             .checkbox
                 label
-                    input(type="checkbox", name="human")
-                    span.chechbox__label Я человек
+                    input(type="checkbox" class="checkbox-human" name="human" checked)
+                    span.checkbox-custom
+                    span.checkbox-label Я человек
             .radio
                 .radio__title
                     p Вы точно не робот?
                 .radio__field
                     label
-                        input(type="radio" name="question" value="yes" checked)
-                        span.radio__label Да
-                .radio__field
+                        input(type="radio" class="radio-question" name="question" value="yes" checked)
+                        span.radio-custom
+                        span.radio-label Да
                     label
-                        input(type="radio" name="question" value="no")
-                        span.radio__label Не уверен
+                        input(type="radio" class="radio-question" name="question" value="no")
+                        span.radio-custom
+                        span.radio-label Не уверен
             .buttons
-                a(href="/index.html" class="auth___btn") На главную
-                a(href="" class="auth___btn") Войти
+                a.auth-btn(href="/index.html") На главную
+                a.auth-btn(href="") Войти
         .copyright
             p.copyright__text © Давлет Ганиев | 2017

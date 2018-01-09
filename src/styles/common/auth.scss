@@ -1,7 +1,7 @@
 .bg-auth {
     display: flex;
     position: relative;
-    background-image: url(../images/welcome/welcome-bg.jpg);
+    background-image: url('../images/welcome/welcome-bg.jpg');
     background-size: cover;
     height: 100vh;
 }
@@ -14,6 +14,7 @@
     height: auto;
     background-color: rgba(18, 38, 32, .6);
     color: #ffffff;
+    border-radius: 0 0 5px 5px;
     .auth__title {
         font-family: 'Sansus-Webissimo-Regular', 'sans-serif';
         font-size: 2.1875em;
@@ -43,4 +44,108 @@
             background-image: url('../images/icons/password.png');
         }
     }
+
+    .checkbox {
+        margin: 15px;
+    }
+    .checkbox-human,
+    .radio-question {
+        display: none;
+    }
+    .checkbox-custom,
+    .radio-custom {
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+    .checkbox-custom {
+        background: #6c9c5a;
+        border-radius: 3px;
+    }
+    .radio-custom {
+        border-radius: 50%;
+        background: #fff;
+    }
+    .checkbox-custom,
+    .checkbox-label,
+    .radio-custom {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .checkbox-label,
+    .radio-label {
+        margin-left: 10px;
+        font-family: 'Roboto-Regular', 'sans-serif';
+        font-size: 1em;
+    }
+    .checkbox-human:checked + .checkbox-custom:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        background-image: url('../images/icons/check.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .radio-question:checked + .radio-custom:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: #6c9c5a;
+        top: 6px;
+        bottom: 6px;
+        left: 6px;
+        right: 6px;
+        border-radius: 50%;
+    }
+    .radio-question:checked  ~ .radio-label {
+        color: rgba(108, 156, 90, .8);
+        font-family: 'Roboto-Medium', 'sans-serif';
+    }
+    .radio {
+        width: 100%;
+        margin-bottom: 20px;
+        .radio__field {
+            display: flex;
+            justify-content: center;
+            label {
+                width: 30%;
+            }
+        }
+        .radio__title {
+            text-align: center;
+            font-size: 1em;
+            font-family: 'Roboto-Bold';
+            margin-bottom: 5px;
+        }
+    }
+    .buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        .auth-btn {
+            width: 100%;
+            color: #fff;
+            padding: 13px 10px;
+            background: #6c9c5a;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1em;
+            font-family: 'Roboto-Medium', 'sans-serif';
+            &:hover {
+                background: #4e8839;
+            }
+        }
+        .auth-btn:first-child {
+            border-right: 2px solid rgba(222, 227, 231, .5);
+            border-radius: 0 0 0 5px;
+        }
+        .auth-btn:last-child {
+            border-radius: 0 0 5px 0;
+        }
+    }
+
 }

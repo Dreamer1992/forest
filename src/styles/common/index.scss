@@ -1,6 +1,8 @@
 .header {
     position: relative;
     background-image: url('/assets/images/welcome/welcome-bg.jpg');
+    background-size: cover;
+    background-position: top center;
     height: 700px;
     font-family: 'Roboto-Medium', sans-serif;
 }
