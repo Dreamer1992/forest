@@ -4,4 +4,84 @@ block variables
     - var title = 'Обо мне'
 
 block content
-    h1 Обо мне
+    include ../common/header-inc
+    include ../common/triangle-inc
+
+    section.section.about
+        .about__left
+            .about__left-title
+                .block-title.underline Обо мне
+            .about__left-content
+                .user-description
+                    .user-description__image
+                        img.user-description__avatar(src="../assets/images/who.jpg")
+                    .user-description__title
+                        .block-subtitle.underline Кто я
+                    .user-description__text.text-block
+                        p Я веб разработчик из Санкт-Петербурга. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        br
+                        P Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. 
+        .about__right
+            .about__right-title
+                .block-subtitle.underline Чем я могу быть </br> вам полезен
+            .about__right-desc
+                p.text-block Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                -
+                    var skills_list = [
+                        {
+                            title: "Frontend",
+                            skills: ['HTML5', 'CSS3', 'JavaScript & jQuery']
+                        },
+                        {
+                            title: "Backend",
+                            skills: ["PHP", "mySQl", "Node.js & npm", "Mongo.db"]
+                        },
+                        {
+                            title: "Workflow",
+                            skills: ["Git", "Gulp", "Bower"]
+                        }
+                    ];
+                mixin skills_card(arg)
+                    .skills_card
+                        .skills_title
+                            h2.skills-title= arg.title
+                        .skills_row
+                            ul.skills-list
+                                each skill in arg.skills
+                                    li.skills-list__item
+                                        svg.skill__circle(width="110" height="110" stroke-width="20" fill="none")
+                                            circle(r="45" cx="55" cy="55" stroke="#dfdcd5" fill="none")
+                                            circle(r="45" cx="55" cy="55" stroke="#74a163" class="sector" transform="rotate(-90 55 55)")
+                                        span.skill-title= skill
+                
+                for cout in skills_list
+                    +skills_card(cout)                                                        
+
+    section.section.section__map
+        .google-map
+        .map__data
+            .contacts
+                .contacts__title
+                    .block-subtitle.underline Контакты
+                ul.contacts__list
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/skype.svg
+                        .contacts-row__title skype_ganiev
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/envelope.svg
+                        .contacts-row__title Ganiev.Davlet@gmail.com
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/phone.svg
+                        .contacts-row__title +7 931 368 47 50
+                    li.contacts__item.contacts-row
+                        .contacts-row__icon
+                            include ../../images/icons/map_marker.svg
+                        .contacts-row__title Санкт-Петербург, ул. Софьи Ковалевской
+
+    include ../common/footer-inc
+    .footer__copyright
+        .copyright
+            p.copyright__text © Давлет Ганиев | 2017

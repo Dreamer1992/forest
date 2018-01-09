@@ -1,13 +1,13 @@
-// import { rename } from 'fs';
-
 const gulp = require('gulp');
-const pug = require('gulp-pug');
 
+const pug = require('gulp-pug');
 const sass = require('gulp-sass');
+
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
-
 const del = require('del');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
 
 const browserSync = require('browser-sync').create();
 
@@ -15,7 +15,7 @@ const paths = {
     root: './build',
     templates: {
         pages: 'src/templates/pages/*.pug',
-        src: 'src/template/**/*.pug'
+        src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/styles/**/*.scss',
@@ -34,6 +34,14 @@ const paths = {
 // pug
 function templates() {
     return gulp.src(paths.templates.pages)
+        .pipe(plumber({
+            errorHandler: notify.onError(function(error) {
+                return {
+                    title: 'Pug',
+                    message: error.message
+                };
+            })
+        }))
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest(paths.root));
 }
@@ -41,6 +49,14 @@ function templates() {
 // scss
 function styles() {
     return gulp.src('./src/styles/app.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError(function(error) {
+                return {
+                    title: 'Styles',
+                    message: error.message
+                };
+            })
+        }))
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())

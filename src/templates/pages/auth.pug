@@ -1,0 +1,35 @@
+extends ../template
+block variables
+    - var title = 'Авторизация'
+
+block content
+    section.bg-auth
+        .auth__form
+            .auth__title
+                h2.underline Авторизуйтесь
+            .auth__field
+                input(type="text" id="login" class="login" placeholder="Логин")
+            .auth__field
+                input(type="password" id="password" class="password" placeholder="Пароль")
+            .checkbox
+                label
+                    input(type="checkbox" class="checkbox-human" name="human" checked)
+                    span.checkbox-custom
+                    span.checkbox-label Я человек
+            .radio
+                .radio__title
+                    p Вы точно не робот?
+                .radio__field
+                    label
+                        input(type="radio" class="radio-question" name="question" value="yes" checked)
+                        span.radio-custom
+                        span.radio-label Да
+                    label
+                        input(type="radio" class="radio-question" name="question" value="no")
+                        span.radio-custom
+                        span.radio-label Не уверен
+            .buttons
+                a.auth-btn(href="/index.html") На главную
+                a.auth-btn(href="") Войти
+        .copyright
+            p.copyright__text © Давлет Ганиев | 2017
